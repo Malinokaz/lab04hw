@@ -1,4 +1,4 @@
-name: CMake
+name: CMake CI
 
 on:
   push:
@@ -16,41 +16,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Build formatter_lib
+    - name: Configure and Build All
       run: |
-        cd formatter_lib
-        mkdir -p build
-        cd build
-        cmake .. -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }}
-        cmake --build . --config ${{ env.BUILD_TYPE }}
-
-    - name: Build formatter_ex_lib
-      run: |
-        cd formatter_ex_lib
-        mkdir -p build
-        cd build
-        cmake .. -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }}
-        cmake --build . --config ${{ env.BUILD_TYPE }}
-
-    - name: Build solver_lib
-      run: |
-        cd solver_lib
-        mkdir -p build
-        cd build
-        cmake .. -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }}
-        cmake --build . --config ${{ env.BUILD_TYPE }}
-
-    - name: Build hello_world_application
-      run: |
-        cd hello_world_application
-        mkdir -p build
-        cd build
-        cmake .. -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }}
-        cmake --build . --config ${{ env.BUILD_TYPE }}
-
-    - name: Build solver_application
-      run: |
-        cd solver_application
         mkdir -p build
         cd build
         cmake .. -DCMAKE_BUILD_TYPE=${{ env.BUILD_TYPE }}
