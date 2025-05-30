@@ -1,7 +1,7 @@
 #include <iostream>
 
 #include "formatter_ex.h"
-#include "solver.h"
+#include "../solver_lib/solver.h"
 
 int main()
 {
